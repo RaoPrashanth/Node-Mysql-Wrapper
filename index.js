@@ -1,5 +1,5 @@
 var mysql = require('mysql');
-var dbcpool = require('./database/dbcpool');
+var dbcpool = require('./database/dbpool');
 
 function insertQuery(table, row, cb) {
   //TODO add validation for json data. Json schema must be sync with database schema.
