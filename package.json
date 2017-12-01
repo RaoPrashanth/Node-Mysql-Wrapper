@@ -1,5 +1,5 @@
 {
-  "name": "mysql-wrapper",
+  "name": "mothi",
   "version": "1.0.0",
   "description": "A wrapper library for mysql.",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "mocha"
   },
   "keywords": [
-    "mysql-wrapper"
+    "node-mysql-wrapper", "mothi"
   ],
   "author": "iamprashanthrao@gmail.com",
   "license": "MIT",

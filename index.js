@@ -39,6 +39,15 @@ function deleteQuery(table, row, cb) {
   });
 }
 
+function fetchTableQuery(table, cb) {
+  var query = dbcpool.query('SELECT * FROM ??', [table], function(error, results, fields) {
+    if (error) throw error;
+    console.log(table, '- results :', results);
+    cb(error, results);
+  });
+}
+
+
 exports.insertQuery = insertQuery;
 exports.updateQuery = updateQuery;
 exports.findQuery = findQuery;
