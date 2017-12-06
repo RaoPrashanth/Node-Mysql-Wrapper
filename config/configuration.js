@@ -1,4 +1,6 @@
-var DBCONFIG = {
+require('dotenv').config();
+
+module.exports = {
   MODE: process.env.TTDB_MODE,
   DEV: {
     host: process.env.TTDB_HOST_DEV,

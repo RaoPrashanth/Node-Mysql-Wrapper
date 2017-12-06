@@ -1,8 +1,7 @@
-require('dotenv').config();
 var mysql = require('mysql');
-var config = require('./config/configuration');
+var config = require('../config/configuration');
 
-var dbconfig = config.DBCONFIG.MODE == 'prod' ? config.DBCONFIG.PROD : config.DBCONFIG.DEV;
-Object.assign(dbconfig, config.DBCONFIG.ETC);
+var dbconfig = config.MODE == 'prod' ? config.PROD : config.DEV;
+Object.assign(dbconfig, config.ETC);
 var pool = mysql.createPool(dbconfig);
 module.exports = pool;

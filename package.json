@@ -1,18 +1,21 @@
 {
-  "name": "mysql-wrapper",
+  "name": "mothi",
   "version": "1.0.0",
   "description": "A wrapper library for mysql.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
-    "mysql-wrapper"
+    "node-mysql-wrapper", "mothi"
   ],
   "author": "iamprashanthrao@gmail.com",
   "license": "MIT",
   "dependencies": {
     "mysql": "^2.14.1",
     "dotenv": "^4.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.5.0"
   }
 }
