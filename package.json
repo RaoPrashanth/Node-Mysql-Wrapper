@@ -1,6 +1,6 @@
 {
   "name": "mothi",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A wrapper library for mysql.",
   "main": "index.js",
   "scripts": {
