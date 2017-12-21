@@ -1,4 +1,5 @@
 var assert = require('assert');
+var expect = require('chai').expect
 var index = require('../index'); // our module
 var dbpool = require('../database/dbpool');
 var config = require('../config/configuration');
@@ -13,15 +14,36 @@ describe('Node Mysql Wrapper', function() {
       assert.equal(typeof index.deleteQuery, 'function');
     });
 
-    it('test insertQuery method', function() {
+    it('positive test insertQuery method', function(done) {
       var data = {
-        'id': 1
+        'id': 2
       };
-      index.insertQuery("test", data,
-        function(error, results) {
-          assert.equal(error, "data");
-        });
+      var callback  = function(error, results) {
+        assert.equal(error, null);
+        assert.equal(results.affectedRows, 1);
+        done();
+      };
+      index.insertQuery("test", data, callback);
     });
+
+    //TODO fix this test case
+    // it('negative test insertQuery method', function(err, done) {
+    //   expect(() =>index.insertQuery("no_table", {'id': 2}, null)).to.throw(
+    //     new Error("Uncaught Error: ER_NO_SUCH_TABLE: Table 'test.no_table' doesn't exist"));
+    // });
+
+    it('positive test customQuery method', function(done) {
+      var data = {'id': 3};
+      var query = 'INSERT INTO ?? SET ?';
+      var callback  = function(error, results) {
+        assert.equal(error, null);
+        assert.equal(results.affectedRows, 1);
+        done();
+      };
+      index.customQuery(query, ['test', data], callback);
+    });
+
+    //TODO write negative test case as well.
   });
   describe('Module config/configuration.js', function() {
     it('check for dbpool', function() {
