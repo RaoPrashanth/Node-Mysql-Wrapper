@@ -28,7 +28,7 @@ describe('Node Mysql Wrapper', function() {
       assert.equal(typeof config, 'object');
       assert.ok(config, 'dbpool instance must not be null');
       assert.equal(config.MODE, "dev");
-      assert.equal(config.DEV.host, "localhost");
+      assert.equal(config.DEV.host, "127.0.0.1");
       assert.equal(config.DEV.user, "root");
       assert.equal(config.DEV.password, "admin");
       assert.equal(config.DEV.database, "test");
