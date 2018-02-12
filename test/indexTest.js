@@ -14,17 +14,17 @@ describe('Node Mysql Wrapper', function() {
       assert.equal(typeof index.deleteQuery, 'function');
     });
 
-    it('positive test insertQuery method', function(done) {
-      var data = {
-        'id': 2
-      };
-      var callback  = function(error, results) {
-        assert.equal(error, null);
-        assert.equal(results.affectedRows, 1);
-        done();
-      };
-      index.insertQuery("test", data, callback);
-    });
+    // it('positive test insertQuery method', function(done) {
+    //   var data = {
+    //     'id': 2
+    //   };
+    //   var callback  = function(error, results) {
+    //     assert.equal(error, null);
+    //     assert.equal(results.affectedRows, 1);
+    //     done();
+    //   };
+    //   index.insertQuery("test", data, callback);
+    // });
 
     //TODO fix this test case
     // it('negative test insertQuery method', function(err, done) {
@@ -32,16 +32,16 @@ describe('Node Mysql Wrapper', function() {
     //     new Error("Uncaught Error: ER_NO_SUCH_TABLE: Table 'test.no_table' doesn't exist"));
     // });
 
-    it('positive test customQuery method', function(done) {
-      var data = {'id': 3};
-      var query = 'INSERT INTO ?? SET ?';
-      var callback  = function(error, results) {
-        assert.equal(error, null);
-        assert.equal(results.affectedRows, 1);
-        done();
-      };
-      index.customQuery(query, ['test', data], callback);
-    });
+    // it('positive test customQuery method', function(done) {
+    //   var data = {'id': 3};
+    //   var query = 'INSERT INTO ?? SET ?';
+    //   var callback  = function(error, results) {
+    //     assert.equal(error, null);
+    //     assert.equal(results.affectedRows, 1);
+    //     done();
+    //   };
+    //   index.customQuery(query, ['test', data], callback);
+    // });
 
     //TODO write negative test case as well.
   });
